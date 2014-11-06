@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block body %}
+    {% for i in range(data|length) %}
+    {% set wdt = 100 / data|length %}
+    {% if wdt < 20 %}
+    {% set wdt = 20 %}
+    {% endif %}
+    <div style="width:calc({{ wdt }}% - 26px);" class="station_holder">
+        <p><h4>Station: {{data[i]['Name']}}</h4 ></p>
+        <p>Id: {{ data[i]['SiteId']}}</p>
+        <p>Type: {{ data[i]['Type']}}</p>
+        <p>X: {{ data[i]['Y']}}</p>
+        <p>Y: {{ data[i]['X']}}</p>
+    </div>
+    {% endfor %}
+{% endblock %}

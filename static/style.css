@@ -1,5 +1,28 @@
-body {background-color: black;
-      color: green;
+*{
+    margin:0px;
+    padding:0px;
+}
+body {
+    background-color: black;
+}
+p, h4{
+    overflow: hidden;
+    white-space: nowrap;
+}
 
-
+h4{
+    color:#000000;
+}
+p{
+    color:#222222;
+}
+.station_holder{
+    float:left;
+    border-left:4px solid #888888;
+    border-top:4px solid #aaaaaa;
+    border-right:4px solid #666666;
+    border-bottom:4px solid #444444;
+    background-color:#999999;
+    padding:5px;
+    margin:4px;
 }
