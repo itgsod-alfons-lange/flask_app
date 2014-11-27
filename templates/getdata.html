@@ -1,16 +1,27 @@
 {% extends "layout.html" %}
 {% block body %}
-    {% for i in range(data|length) %}
-    {% set wdt = 100 / data|length %}
-    {% if wdt < 20 %}
-    {% set wdt = 20 %}
-    {% endif %}
-    <div style="width:calc({{ wdt }}% - 26px);" class="station_holder">
-        <p><h4>Station: {{data[i]['Name']}}</h4 ></p>
-        <p>Id: {{ data[i]['SiteId']}}</p>
-        <p>Type: {{ data[i]['Type']}}</p>
-        <p>X: {{ data[i]['Y']}}</p>
-        <p>Y: {{ data[i]['X']}}</p>
+
+    <div class="type">Tåg</div>
+    <div class="row_container">
+    {% for i in range(data['Trains']|length) %}
+    <div class="row">
+        <div class="station">{{data['Trains'][i]['Destination']}}</div>
+        <div class="time">{{data['Trains'][i]['DisplayTime']}}</div>
+        <div class="late">{{data['Trains'][i]['Late']}}</div>
     </div>
     {% endfor %}
+    </div>
+
+
+    <div class="type">Bussar</div>
+    <div class="row_container">
+    {% for i in range(data['Buses']|length) %}
+    <div class="row">
+        <div class="station">{{data['Buses'][i]['Destination']}}</div>
+        <div class="time">{{data['Buses'][i]['DisplayTime']}}</div>
+        <div class="late">{{data['Buses'][i]['Late']}}</div>
+    </div>
+    {% endfor %}
+    </div>
+
 {% endblock %}

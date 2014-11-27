@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
     <title>{{title}}</title>
 </head>
-<body>
+<body style="background-image: url({{ url_for('static', filename='bg.png')}});">
     {% block body %}{% endblock %}
 </body>
 </html>
