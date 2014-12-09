@@ -17,8 +17,7 @@ def return_time_diff(scheduled, expected):
         temp = d_schedule
         d_schedule = d_expect
         d_expect = temp
-    time_late = "(" + str((d_expect-d_schedule).seconds/60) + "min)" if ((d_expect-d_schedule).seconds/60 != 0) else ""
-
+    time_late = "(" + str((d_expect-d_schedule).seconds/60) + " min)" if ((d_expect-d_schedule).seconds/60 != 0) else ""
     return time_late
 
 

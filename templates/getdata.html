@@ -1,27 +1,27 @@
 {% extends "layout.html" %}
 {% block body %}
-
+<div class="main_container">
     <div class="type">Tåg</div>
     <div class="row_container">
     {% for i in range(data['Trains']|length) %}
     <div class="row">
         <div class="station">{{data['Trains'][i]['Destination']}}</div>
         <div class="time">{{data['Trains'][i]['DisplayTime']}}</div>
-        <div class="late">{{data['Trains'][i]['Late']}}</div>
     </div>
     {% endfor %}
     </div>
+</div>
 
-
+<div class="main_container">
     <div class="type">Bussar</div>
     <div class="row_container">
     {% for i in range(data['Buses']|length) %}
     <div class="row">
-        <div class="station">{{data['Buses'][i]['Destination']}}</div>
+        <div class="station">{{data['Buses'][i]['LineNumber']}} - {{data['Buses'][i]['Destination']}}</div>
         <div class="time">{{data['Buses'][i]['DisplayTime']}}</div>
-        <div class="late">{{data['Buses'][i]['Late']}}</div>
     </div>
     {% endfor %}
     </div>
+</div>
 
 {% endblock %}

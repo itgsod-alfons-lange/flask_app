@@ -2,10 +2,11 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
     <title>{{title}}</title>
 </head>
-<body style="background-image: url({{ url_for('static', filename='bg.png')}});">
+<body style="">
     {% block body %}{% endblock %}
 </body>
 </html>
